@@ -1,0 +1,2 @@
+await page.locator("#username").fill("Abhishek")
+await page.locator("#password").fill("Aishwarya")
