@@ -1,0 +1,53 @@
+import {test} from "@playwright/test"
+
+test('Practice Form', async ({ page }) => {
+
+  await page.goto('https://testautomationpractice.blogspot.com/');
+
+  // Name
+  await page.locator('#name').fill('Abhishek');
+
+  // Email
+  await page.locator('#email').fill('abhishek@gmail.com');
+
+  // Phone
+  await page.locator('#phone').fill('9876543210');
+
+  // Address
+  await page.locator('#textarea').fill('Pune, Maharashtra');
+
+  // Gender
+  await page.locator('#male').check();
+
+  // Days
+  await page.locator('#monday').check();
+  await page.locator('#wednesday').check();
+  await page.locator('#friday').check();
+
+  // Country
+  await page.locator('#country').selectOption('United States');
+
+  // Colors
+  await page.locator('#colors').selectOption([
+    { label: 'Red' },
+    { label: 'Blue' },
+    { label: 'Green' }
+  ]);
+
+  // Sorted List
+  await page.locator('#animals').selectOption([
+    { label: 'Cat' },
+    { label: 'Dog' },
+    { label: 'Lion' }
+  ]);
+
+  // Date 
+  await page.locator('#datepicker').fill('07/08/2026');
+
+  // Date
+  await page.locator('#txtDate').fill('08/07/2026');
+
+  // Submit
+  await page.locator("//button[text()='Submit']").click();
+
+});
